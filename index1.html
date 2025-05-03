@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPIC Surprise for Rayyan Sadharah</title>
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #111;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; 
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      transform: scale(0.8) rotate(-5deg);
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+                  opacity 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      pointer-events: none;
+    }
+
+    .page.active {
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1) rotate(0deg);
+      pointer-events: auto;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: clamp(1rem, 4vw, 1.25rem);
+      border: none;
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .emoji {
+      font-size: clamp(2rem, 10vw, 3rem);
+      margin: 20px 0;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      to { transform: translateY(-20px) scale(1.2); }
+    }
+
+    @keyframes shake {
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+
+    @keyframes rainbow {
+      0% { color: red; }
+      14% { color: orange; }
+      28% { color: yellow; }
+      42% { color: green; }
+      57% { color: blue; }
+      71% { color: indigo; }
+      85% { color: violet; }
+    }
+
+    .rainbow-text {
+      animation: rainbow 3s linear infinite, shake 0.5s ease infinite;
+    }
+
+    .ninja-cat {
+      position: fixed;
+      bottom: -100px;
+      right: -100px;
+      font-size: clamp(3rem, 15vw, 6rem);
+      transition: all 1s ease 0.5s;
+      opacity: 0;
+    }
+
+    .active .ninja-cat {
+      opacity: 1;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    #final-image {
+      max-width: min(80%, 300px);
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+      transform: scale(0);
+      transition: transform 1s ease;
+    }
+
+    .active #final-image {
+      transform: scale(1) rotate(360deg);
+    }
+
+    .confetti {
+      position: fixed;
+      opacity: 0;
+      z-index: 999;
+      animation: confetti-fall linear forwards;
+    }
+
+    @keyframes confetti-fall {
+      to {
+        opacity: 1;
+        top: 100vh;
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page active" id="page1">
+    <h1> Bestie , Rayyan Sadharah! 👀 😂 </h1>
+    <p>Unakku  life-la  oru important message sollaporae...</p>
+    <div class="emoji">🤔</div>
+    <button>Ready-a iru! (ok vaa?)</button>
+  </div>
+
+  <div class="page" id="page2">
+    <h1>Unnta eppadi solla pooraennu thrla? ungala enakku romba pudicha person adhu naladhaa sollrae  😏</h1>
+    <p>Idhu serious business matter , "final chip bag-la irukkum la andha maari" serious.</p>
+    <div class="emoji">🍟</div>
+    <button>Pakka buckled in! 🚀</button>
+  </div>
+
+  <div class="page" id="page3">
+    <h1>Unakku theriyuma...</h1>
+    <p>Indha button-a click panna, oru cat sneeze-a thaan velai paakudhu!</p>
+    <div class="emoji">🐱‍👤</div>
+    <button>*click pannunga* (cute irukku! 🔬 ✨)</button>
+    <div class="ninja-cat">🐱‍👤</div>
+  </div>
+
+  <div class="page" id="page4">
+    <h1>Warning: Only for VIP's its hacked</h1>
+    <p>99.9% pure, uncut, organic AWESOMENESS!</p>
+    <div class="emoji">⚠️</div>
+    <button>Risk-a accept panna paakalaam! 💥</button>
+  </div>
+
+  <div class="page" id="page5">
+    <h1>The moment of truth...</h1>
+    <p>7.8 billion dollar investment after years of research...</p>
+    <div class="emoji">🔬</div>
+    <button>REVEAL THE SECRET! 🎉</button>
+  </div>
+
+  <div class="page" id="page6">
+    <h1 class="rainbow-text">✨ EPIC SURPRISE ✨</h1>
+    <p>All that buildup-kum... it's...</p>
+    <img id="final-image" src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" alt="Nothing" loading="lazy">
+    <p>ABSOLUTELY NOTHING! 🤣</p>
+    <button>Athu... Try Again! 🔄</button>
+  </div>
+
+  <script>
+    // Cache DOM elements
+    const pages = document.querySelectorAll('.page');
+    const buttons = document.querySelectorAll('button');
+    const audioCache = {};
+    
+    // Event delegation for buttons
+    document.body.addEventListener('click', (e) => {
+      if (e.target.tagName === 'BUTTON') {
+        nextPage();
+      }
+    });
+
+    function preloadAudio() {
+      const sounds = {
+        reveal: 'https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3',
+        restart: 'https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3'
+      };
+      
+      Object.entries(sounds).forEach(([key, url]) => {
+        audioCache[key] = new Audio(url);
+        audioCache[key].load();
+      });
+    }
+
+    function createConfetti() {
+      const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+      const fragment = document.createDocumentFragment();
+      
+      for (let i = 0; i < 75; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = '-10px';
+        confetti.style.width = Math.random() * 10 + 5 + 'px';
+        confetti.style.height = Math.random() * 10 + 5 + 'px';
+        confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear forwards`;
+        fragment.appendChild(confetti);
+      }
+      
+      document.body.appendChild(fragment);
+      
+      // Auto cleanup after animation
+      setTimeout(() => {
+        const confettiElements = document.querySelectorAll('.confetti');
+        confettiElements.forEach(el => el.remove());
+      }, 5000);
+    }
+
+    let currentPage = 1;
+    
+    function nextPage() {
+      pages[currentPage - 1].classList.remove('active');
+      currentPage = (currentPage % pages.length) + 1;
+      
+      if (currentPage === 6) {
+        createConfetti();
+        setTimeout(() => {
+          pages[5].classList.add('active');
+          playSound('reveal');
+        }, 100);
+      } else {
+        pages[currentPage - 1].classList.add('active');
+      }
+    }
+
+    function restart() {
+      pages[currentPage - 1].classList.remove('active');
+      currentPage = 1;
+      pages[0].classList.add('active');
+      playSound('restart');
+    }
+
+    function playSound(key) {
+      if (audioCache[key]) {
+        audioCache[key].currentTime = 0;
+        audioCache[key].play().catch(e => console.log('Audio play failed:', e));
+      }
+    }
+
+    // Initialize
+    preloadAudio();
+    
+    // Set up restart button
+    document.querySelector('#page6 button').addEventListener('click', restart);
+  </script>
+</body>
+</html>
